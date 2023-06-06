@@ -1,4 +1,18 @@
 ---
+const pageTitle = "About Me";
+
+const indentity = {
+    firstName: 'Tom',
+    country: 'United Kingdom',
+    occupation: 'Developer',
+    hobbies: ["football", "gaming", "music"]
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Typescript", "Astro", "PostgreSQL"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -7,15 +21,32 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>My Astro Site</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
-		<h1>About Me</h1>
+		<h1>{pageTitle}</h1>
         <h2>My name is Tom and I this is my new Astro site!</h2>
-        <p>I am working through Astor's introductory tutorial. This is te second page on my website, and it's the first one I've built myself.</p>
+        <p>I am working through Astro's introductory tutorial. This is te second page on my website, and it's the first one I've built myself.</p>
         <p>This site will update as I complete more of the tutorial, so keep checking back to see how my journey is going!</p>
+        
+        {happy && <p>I am happy to be Learning Astro!</p>}
+        {finished && <p>I finished this tutorial!</p>}
+        {goal === 3? <p>My goal is to finish in 3 days</p>: <p>My goal is not 3 days</p>}
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {indentity.firstName}.</li>
+            <li>I live in {indentity.country} and I am a {indentity.occupation}.</li>
+            {indentity.hobbies.length >=2 &&
+            <li>Two of my hobbbies are: {indentity.hobbies[0]} and {indentity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
 	</body>
 </html>
