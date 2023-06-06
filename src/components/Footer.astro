@@ -1,0 +1,19 @@
+---
+import Social from "./Social.astro";
+const platform = ["portfolio"];
+const username = 'TomBirbeck';
+---
+
+<footer>
+    <p>Learn more about my projects on my <a href="https://portfolio-tombirbeck.vercel.app/">{platform}</a></p>
+    <Social platform="linkedin" username=""/>
+    <Social platform="gihub" username="TomBirbeck"/>
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>
